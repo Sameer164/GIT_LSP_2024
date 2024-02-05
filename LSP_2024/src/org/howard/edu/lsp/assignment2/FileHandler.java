@@ -33,7 +33,7 @@ public class FileHandler {
   public void CountInstance() {
     while (this.fileScanner.hasNextLine()) {
       String line = this.fileScanner.nextLine();
-      String[] words = line.split(" ");
+      String[] words = line.split("[\\s']");
       for (int i = 0; i < words.length; i++) {
         if (words[i].length() > 3 && !this.helper.isInteger(words[i])) {
           helper.addToCounts(counts, words[i]);
